@@ -1,0 +1,14 @@
+node_modules
+.next
+.env*
+.DS_Store
+out
+dist
+*.log
+
+# Local IDE / agent state
+.claude
+.vscode
+.idea
+*.swp
+Thumbs.db
