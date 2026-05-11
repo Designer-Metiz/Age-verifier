@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { Mail, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import AgeShieldLogo from "./ui/icons/AgeShieldLogo";
@@ -54,7 +54,7 @@ export default function Navbar() {
       <div className="w-full px-4 sm:px-6 lg:px-12 py-5">
         <div className="flex items-center justify-between h-14">
           {/* Logo + subtitle */}
-          <Link href="#" className="flex items-center gap-3 group shrink-0">
+          <Link href="#" className="flex items-center gap-2 group shrink-0">
             <AgeShieldLogo
               className="h-12 w-12 drop-shadow-[0_8px_20px_rgba(42,34,115,0.35)]"
               variant="purple"
@@ -64,7 +64,7 @@ export default function Navbar() {
                 AgeShield
               </span>
               <span className="mt-1.5 text-[13px] text-[#6E747F] font-normal leading-none">
-                Built for Shopify
+                Product by Shopify
               </span>
             </div>
           </Link>
@@ -91,16 +91,13 @@ export default function Navbar() {
 
           {/* CTA — far right */}
           <div className="hidden md:flex items-center shrink-0">
-            <Link
-              href="#cta"
-              className="group inline-flex items-center gap-2 rounded-lg bg-[#2A2273] hover:bg-[#1A1553] text-white text-[15px] font-semibold px-8 h-12 transition-colors"
+            <a
+              href="mailto:designer.metizsoft@gmail.com"
+              className="group inline-flex items-center gap-2.5 rounded-lg bg-[#2A2273] hover:bg-[#1A1553] text-white text-[15px] font-semibold px-8 h-12 transition-colors"
             >
-              Book A 30 Min Call
-              <ArrowUpRight
-                className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                strokeWidth={2.5}
-              />
-            </Link>
+              <Mail className="h-[18px] w-[18px] shrink-0" strokeWidth={2.2} />
+              Email Us
+            </a>
           </div>
 
           {/* Mobile toggle */}
@@ -139,13 +136,13 @@ export default function Navbar() {
                 );
               })}
               <div className="mt-3 pt-3 border-t border-[#E2E5EA]">
-                <Link
-                  href="#cta"
-                  className="flex items-center justify-center gap-2 rounded-lg bg-[#2A2273] hover:bg-[#1A1553] text-white text-sm font-semibold px-5 py-3 transition-colors"
+                <a
+                  href="mailto:designer.metizsoft@gmail.com"
+                  className="flex items-center justify-center gap-2.5 rounded-lg bg-[#2A2273] hover:bg-[#1A1553] text-white text-sm font-semibold px-5 py-3 transition-colors"
                 >
-                  Book A 30 Min Call
-                  <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} />
-                </Link>
+                  <Mail className="h-[18px] w-[18px] shrink-0" strokeWidth={2.2} />
+                  Email Us
+                </a>
               </div>
             </div>
           </motion.div>

@@ -132,14 +132,16 @@ export default function Footer() {
         <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Brand column */}
           <div>
-            <Link href="#" className="inline-flex items-center gap-2.5">
-              <AgeShieldLogo className="h-10 w-10" variant="orange" />
-              <span className="font-display text-[22px] font-bold tracking-tight text-white">
-                Age
-                <span className="bg-gradient-to-r from-[#FFB680] to-[#FF5C00] bg-clip-text text-transparent">
-                  Shield
+            <Link href="#" className="inline-flex items-center gap-2 group">
+              <AgeShieldLogo className="h-12 w-12" variant="orange" />
+              <div className="flex flex-col leading-none">
+                <span className="font-display text-[26px] font-extrabold tracking-[0.01em] text-white uppercase leading-none">
+                  AgeShield
                 </span>
-              </span>
+                <span className="mt-1.5 text-[13px] text-white/60 font-normal leading-none">
+                  Product by Shopify
+                </span>
+              </div>
             </Link>
 
             <p className="mt-5 max-w-md text-[16px] leading-[24px] text-white/60">
@@ -152,16 +154,16 @@ export default function Footer() {
               <span>4.4 / 5 on Shopify App Store</span>
             </div>
 
-            <div className="mt-8 flex items-center gap-2">
+            <div className="mt-8 flex items-center gap-3">
               {socials.map((s) => (
                 <a
                   key={s.n}
                   href="#"
                   aria-label={s.n}
                   title={s.n}
-                  className="h-9 w-9 grid place-items-center rounded-full ring-1 ring-white/10 bg-white/[0.04] text-white/65 hover:text-white hover:bg-[#FF5C00]/15 hover:ring-[#FF5C00]/40 transition-colors"
+                  className="h-10 w-10 grid place-items-center rounded-full ring-1 ring-white/15 bg-white/[0.06] text-white/85 hover:text-white hover:bg-[#FF5C00]/20 hover:ring-[#FF5C00]/50 transition-colors"
                 >
-                  <s.Icon className="h-[14px] w-[14px]" />
+                  <s.Icon className="h-[18px] w-[18px]" />
                 </a>
               ))}
             </div>

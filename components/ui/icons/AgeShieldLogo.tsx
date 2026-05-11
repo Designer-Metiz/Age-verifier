@@ -37,7 +37,7 @@ export default function AgeShieldLogo({
         fill={accent}
       />
 
-      {/* "21+" wordmark — Poppins extrabold to match brand */}
+      {/* "18+" wordmark — Poppins extrabold to match brand */}
       <text
         x="24"
         y="29"
@@ -48,7 +48,7 @@ export default function AgeShieldLogo({
         fontFamily="Poppins, Inter, ui-sans-serif, system-ui, sans-serif"
         letterSpacing="-0.04em"
       >
-        21+
+        18+
       </text>
     </svg>
   );
