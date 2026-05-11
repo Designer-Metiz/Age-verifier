@@ -44,7 +44,7 @@ export default function StoreProtection() {
   return (
     <section
       id="protection"
-      className="relative py-32 sm:py-40 bg-[#F9FAFB] overflow-hidden"
+      className="relative py-20 sm:py-28 bg-[#F9FAFB] overflow-hidden"
     >
       <div className="absolute inset-0 bg-grid opacity-[0.35] mask-radial-fade" />
 

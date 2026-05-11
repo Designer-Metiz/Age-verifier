@@ -32,7 +32,7 @@ export default function SectionHeading({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.05 }}
-        className="mt-5 font-display text-display-lg font-bold tracking-[-0.025em] text-balance text-[#1C1C1C]"
+        className="mt-5 font-display text-[40px] sm:text-[48px] lg:text-[56px] leading-[1.08] font-bold tracking-[-0.025em] text-balance text-[#1C1C1C]"
       >
         {title}
       </motion.h2>

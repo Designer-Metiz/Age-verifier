@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
-  ArrowUpRight,
   Calendar,
   Check,
   IdCard,
@@ -74,7 +73,7 @@ export default function VerificationFlow() {
     <section
       id="flow"
       ref={sectionRef}
-      className="relative py-32 sm:py-40 overflow-hidden bg-white"
+      className="relative py-20 sm:py-28 overflow-hidden bg-white"
     >
       {/* faint dotted backdrop */}
       <div
@@ -174,27 +173,6 @@ export default function VerificationFlow() {
           </div>
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-20 flex flex-col items-center gap-3"
-        >
-          <a
-            href="#cta"
-            className="group inline-flex items-center gap-2 rounded-lg bg-[#1A1553] hover:bg-[#13104A] text-white text-[14px] font-semibold px-6 py-3 transition-colors shadow-[0_12px_28px_-10px_rgba(26,21,83,0.45)]"
-          >
-            See it live in your store
-            <ArrowUpRight
-              className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-              strokeWidth={2.5}
-            />
-          </a>
-          <p className="text-[13px] text-[#6E747F]">
-            Average install time · 5 minutes
-          </p>
-        </motion.div>
       </div>
     </section>
   );

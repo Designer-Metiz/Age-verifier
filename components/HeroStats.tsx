@@ -3,7 +3,6 @@
 import { motion, useInView } from "framer-motion";
 import { Activity, Globe2, ShieldCheck, Users } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import ShopifyIcon from "./ui/icons/ShopifyIcon";
 
 type Stat = {
   Icon: React.ComponentType<any>;
@@ -22,7 +21,7 @@ const stats: Stat[] = [
     suffix: "+",
     label: "Active Stores",
     sub: "Trust AgeShield daily",
-    iconAccent: "orange",
+    iconAccent: "purple",
   },
   {
     Icon: Globe2,
@@ -53,27 +52,12 @@ const stats: Stat[] = [
 
 export default function HeroStats() {
   return (
-    <div className="relative mx-auto max-w-6xl mt-20 sm:mt-24 px-4 sm:px-6 lg:px-8">
+    <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-14 gap-x-8">
         {stats.map((s, i) => (
           <StatCell key={s.label} stat={s} index={i} />
         ))}
       </div>
-
-      {/* Minimal trust strip */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.5, duration: 0.6 }}
-        className="mt-16 pt-10 border-t border-[#EEF1F8] flex items-center justify-center gap-2 text-xs sm:text-sm text-[#4D4D4D]"
-      >
-        <ShopifyIcon className="h-4 w-4" />
-        <span>
-          Built for Shopify · Trusted by alcohol, vape, cannabis &amp;
-          adult-retail merchants
-        </span>
-      </motion.div>
     </div>
   );
 }

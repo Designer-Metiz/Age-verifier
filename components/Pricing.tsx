@@ -66,7 +66,7 @@ export default function Pricing() {
   return (
     <section
       id="pricing"
-      className="relative py-32 sm:py-40 bg-[#F9FAFB] overflow-hidden"
+      className="relative py-20 sm:py-28 bg-[#F9FAFB] overflow-hidden"
     >
       {/* soft top glow */}
       <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-[420px] w-[900px] rounded-full bg-[#FF5C00]/10 blur-[140px]" />
@@ -206,18 +206,13 @@ function PricingCard({
       }}
       className={`group relative rounded-3xl flex flex-col transition-all duration-300 ${
         hl
-          ? "bg-gradient-to-br from-[#1F1A57] via-[#1A1553] to-[#13104A] text-white ring-1 ring-[#1A1553]/40 shadow-[0_40px_80px_-30px_rgba(26,21,83,0.55)] lg:-my-2 lg:scale-[1.02] z-10"
+          ? "bg-[#1A1553] text-white ring-1 ring-[#1A1553]/40 shadow-[0_40px_80px_-30px_rgba(26,21,83,0.55)] lg:-my-2 lg:scale-[1.02] z-10"
           : "bg-white text-[#1C1C1C] ring-1 ring-[#E2E5EA] shadow-card hover:shadow-card-lg hover:ring-[#2A2273]/20"
       } overflow-hidden`}
     >
       {/* HIGHLIGHTED CARD DECORATIONS */}
       {hl && (
         <>
-          {/* glow blob */}
-          <div className="pointer-events-none absolute -top-32 -right-20 h-72 w-72 rounded-full bg-[#FF5C00]/30 blur-[80px]" />
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_40%_at_50%_0%,rgba(255,92,0,0.12),transparent_60%)]" />
-          <div className="pointer-events-none absolute inset-0 bg-noise opacity-40 mix-blend-overlay" />
-
           {/* most popular ribbon — replaces small badge */}
           <div className="relative pt-1.5">
             <div className="text-center">

@@ -14,45 +14,24 @@ import {
 } from "./ui/icons/SocialIcons";
 import MagneticButton from "./ui/MagneticButton";
 
-/* All content sourced from the Shopify Age Verifier listing
-   (apps.shopify.com/age-verifier). Design mirrors cookieshield.net's
-   footer structure — dark bg with a white CTA card on top. */
-
 const cols = [
   {
-    title: "Features",
+    title: "Navigation",
     links: [
-      "Age Verification Popup",
-      "Set 18+ / 21+ Rules",
-      "Optional FDA Banner",
-      "Popup Layout Options",
-      "Visitor Tracking",
-      "No-Code Setup",
+      { label: "Features", href: "#features" },
+      { label: "Pricing", href: "#pricing" },
+      { label: "Compliance", href: "#protection" },
+      { label: "Integrations", href: "#integrations" },
+      { label: "FAQ", href: "#faq" },
     ],
   },
   {
-    title: "Pricing",
+    title: "Legal",
     links: [
-      "From $2.99 / month",
-      "$31.99 / year (save 11%)",
-      "7-day free trial",
-      "Compare plans",
-      "Refund policy",
+      { label: "Privacy Policy", href: "#" },
+      { label: "Terms of Service", href: "#" },
+      { label: "Contact", href: "#cta" },
     ],
-  },
-  {
-    title: "Resources",
-    links: [
-      "Help Center",
-      "Setup Documentation",
-      "Privacy Policy",
-      "Contact Support",
-      "FAQs",
-    ],
-  },
-  {
-    title: "Company",
-    links: ["About AgeShield", "Press", "Partners", "Contact", "Status"],
   },
 ];
 
@@ -78,11 +57,9 @@ export default function Footer() {
       className="relative pt-24 pb-10 overflow-hidden text-white"
       style={{ backgroundColor: "#1A1553" }}
     >
-      {/* subtle top hairline */}
       <div className="absolute inset-x-0 top-0 h-px bg-white/10" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* WHITE CTA CARD — sits on the dark footer like cookieshield */}
         <motion.div
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +68,7 @@ export default function Footer() {
           className="relative overflow-hidden rounded-2xl bg-white text-[#1C1C1C] px-8 py-12 sm:px-12 sm:py-16 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.45)]"
         >
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-display text-[32px] sm:text-[44px] lg:text-[52px] leading-[1.05] font-bold tracking-[-0.025em] text-balance text-[#1C1C1C]">
+            <h2 className="font-display text-[40px] sm:text-[48px] lg:text-[56px] leading-[1.08] font-bold tracking-[-0.025em] text-balance text-[#1C1C1C]">
               Restrict Under-Age Visitors.{" "}
               <span className="text-gradient-brand">Stay Compliant.</span>
             </h2>
@@ -102,7 +79,6 @@ export default function Footer() {
               banner that warns visitors of potential harm.
             </p>
 
-            {/* Left-aligned benefit list */}
             <ul className="mt-8 grid sm:grid-cols-2 gap-x-10 gap-y-3 text-left max-w-md mx-auto">
               {benefits.map((b) => (
                 <li
@@ -117,7 +93,6 @@ export default function Footer() {
               ))}
             </ul>
 
-            {/* CTA buttons — primary + secondary */}
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
               <MagneticButton
                 href="#"
@@ -136,7 +111,6 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* Rating row */}
             <div className="mt-8 inline-flex items-center gap-2 text-[14px] text-[#4D4D4D]">
               <div className="flex items-center gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -154,11 +128,12 @@ export default function Footer() {
           </div>
         </motion.div>
 
-        {/* Brand + Link columns row */}
-        <div className="mt-20 grid lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-4">
-            <Link href="#" className="flex items-center gap-2.5">
-              <AgeShieldLogo className="h-11 w-11" variant="orange" />
+        {/* Main footer grid */}
+        <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          {/* Brand column */}
+          <div>
+            <Link href="#" className="inline-flex items-center gap-2.5">
+              <AgeShieldLogo className="h-10 w-10" variant="orange" />
               <span className="font-display text-[22px] font-bold tracking-tight text-white">
                 Age
                 <span className="bg-gradient-to-r from-[#FFB680] to-[#FF5C00] bg-clip-text text-transparent">
@@ -167,52 +142,49 @@ export default function Footer() {
               </span>
             </Link>
 
-            <p className="mt-5 max-w-sm text-[15px] text-white/65 leading-[1.65]">
+            <p className="mt-5 max-w-md text-[16px] leading-[24px] text-white/60">
               A powerful tool that helps businesses restrict access to underage
               individuals, promoting safety and compliance.
             </p>
 
-            <div className="mt-6 flex flex-col gap-2.5 max-w-sm">
-              <div className="inline-flex w-fit items-center gap-2 rounded-full bg-white/[0.05] ring-1 ring-white/10 px-3 py-1.5 text-[13px] text-white/85">
-                <Star className="h-3.5 w-3.5 fill-[#FF8E40] text-[#FF8E40]" />
-                4.4 / 5 on Shopify App Store
-              </div>
-              <div className="inline-flex w-fit items-center gap-2 rounded-full bg-white/[0.05] ring-1 ring-white/10 px-3 py-1.5 text-[13px] text-white/85">
-                <ShopifyIcon className="h-3.5 w-3.5" />
-                Category: Legal · English
-              </div>
+            <div className="mt-6 inline-flex items-center gap-2 rounded-full bg-white/[0.05] ring-1 ring-white/10 px-3 py-1.5 text-[14px] text-white/85">
+              <Star className="h-3.5 w-3.5 fill-[#FF8E40] text-[#FF8E40]" />
+              <span>4.4 / 5 on Shopify App Store</span>
             </div>
 
-            <div className="mt-6 flex items-center gap-2">
+            <div className="mt-8 flex items-center gap-2">
               {socials.map((s) => (
                 <a
                   key={s.n}
                   href="#"
                   aria-label={s.n}
                   title={s.n}
-                  className="h-10 w-10 grid place-items-center rounded-full ring-1 ring-white/10 bg-white/[0.04] text-white/65 hover:text-white hover:bg-[#FF5C00]/15 hover:ring-[#FF5C00]/40 transition-colors"
+                  className="h-9 w-9 grid place-items-center rounded-full ring-1 ring-white/10 bg-white/[0.04] text-white/65 hover:text-white hover:bg-[#FF5C00]/15 hover:ring-[#FF5C00]/40 transition-colors"
                 >
-                  <s.Icon className="h-[15px] w-[15px]" />
+                  <s.Icon className="h-[14px] w-[14px]" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* 4 link columns */}
-          <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-10">
+          {/* Link columns */}
+          <div className="grid grid-cols-2 gap-8 lg:gap-12 lg:justify-items-end">
             {cols.map((c) => (
               <div key={c.title}>
-                <div className="text-[12px] uppercase tracking-[0.16em] text-white/45 font-semibold">
+                <h4
+                  className="text-[14px] font-semibold uppercase text-white/40 mb-6"
+                  style={{ letterSpacing: "0.7px" }}
+                >
                   {c.title}
-                </div>
-                <ul className="mt-5 space-y-3">
+                </h4>
+                <ul className="space-y-3">
                   {c.links.map((l) => (
-                    <li key={l}>
+                    <li key={l.label}>
                       <a
-                        href="#"
-                        className="text-[14.5px] text-white/65 hover:text-white transition-colors"
+                        href={l.href}
+                        className="text-[16px] font-normal leading-[24px] text-white/60 hover:text-white transition-colors"
                       >
-                        {l}
+                        {l.label}
                       </a>
                     </li>
                   ))}
@@ -222,36 +194,15 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Address row */}
-        <div className="mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-[13px] text-white/55">
-          <div className="flex items-center gap-2">
-            <ShopifyIcon className="h-4 w-4" />
-            <span>
-              1309 Coffeen Avenue STE 1200, Sheridan, WY, 82801, US · On
-              Shopify since January 2017
-            </span>
-          </div>
-          <div>
-            From $2.99/month · $31.99/year (save 11%) · 7-day free trial
-          </div>
-        </div>
-
-        {/* Bottom bar — cookieshield-style: copyright left + legal right */}
-        <div className="mt-8 pt-6 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-[13px] text-white/55">
+        {/* Bottom bar */}
+        <div className="mt-16 pt-8 border-t border-white/[0.08] flex flex-col sm:flex-row items-center justify-between gap-3 text-[14px] text-white/50">
           <span>
             © {new Date().getFullYear()} AgeShield, Inc. All rights reserved.
           </span>
-          <div className="flex items-center gap-5">
-            <a href="#" className="hover:text-white transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Terms of Service
-            </a>
-            <a href="#" className="hover:text-white transition-colors">
-              Contact
-            </a>
-          </div>
+          <span className="inline-flex items-center gap-2">
+            <ShopifyIcon className="h-3.5 w-3.5 opacity-70" />
+            Built for Shopify · On Shopify since 2017
+          </span>
         </div>
       </div>
     </footer>

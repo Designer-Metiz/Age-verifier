@@ -1,7 +1,6 @@
 type Props = {
   className?: string;
-  /** When true, render with deep purple shield (for light backgrounds);
-   *  default uses orange gradient (for dark backgrounds) */
+  /** "purple" for light backgrounds, "orange" for dark backgrounds */
   variant?: "purple" | "orange";
 };
 
@@ -9,48 +8,44 @@ export default function AgeShieldLogo({
   className = "h-9 w-9",
   variant = "orange",
 }: Props) {
-  const id = `ag-grad-${variant}`;
-  const stops =
-    variant === "purple"
-      ? { from: "#2A2273", to: "#1A1553" }
-      : { from: "#FF5C00", to: "#FF8E40" };
+  const main = variant === "purple" ? "#2A2273" : "#FF5C00";
+  const accent = variant === "purple" ? "#FF5C00" : "#FFB680";
 
   return (
     <svg
-      viewBox="0 0 32 32"
+      viewBox="0 0 48 48"
       className={className}
       xmlns="http://www.w3.org/2000/svg"
       aria-label="AgeShield"
     >
-      <defs>
-        <linearGradient id={id} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor={stops.from} />
-          <stop offset="100%" stopColor={stops.to} />
-        </linearGradient>
-      </defs>
-
-      {/* Shield silhouette */}
+      {/* Shield silhouette — refined geometry */}
       <path
-        d="M16 2.5L4.5 6.2v8c0 7.4 4.9 13.5 11.5 16.3 6.6-2.8 11.5-8.9 11.5-16.3v-8L16 2.5z"
-        fill={`url(#${id})`}
+        d="M24 4 L40 9 L40 22 C 40 32, 33 39.5, 24 43 C 15 39.5, 8 32, 8 22 L 8 9 Z"
+        fill={main}
       />
 
-      {/* Inner soft highlight */}
+      {/* Subtle inner highlight band (flat tone, not gradient) */}
       <path
-        d="M16 4.4L6.4 7.5v6.7c0 6.2 4 11.4 9.6 13.7 5.6-2.3 9.6-7.5 9.6-13.7V7.5L16 4.4z"
+        d="M24 4 L40 9 L40 22 C 40 25, 39.4 27.7, 38.3 30.2 C 32 25, 32 13, 32 11 C 29.5 10.2, 26.7 9.4, 24 8.5 C 21.3 9.4, 18.5 10.2, 16 11 C 16 13, 16 25, 9.7 30.2 C 8.6 27.7, 8 25, 8 22 L 8 9 Z"
         fill="white"
         fillOpacity="0.08"
       />
 
-      {/* "21+" age mark */}
+      {/* Accent stripe at top — adds character */}
+      <path
+        d="M24 4 L40 9 L40 11 L24 6 L8 11 L8 9 Z"
+        fill={accent}
+      />
+
+      {/* "21+" wordmark — Poppins extrabold to match brand */}
       <text
-        x="16"
-        y="20.5"
+        x="24"
+        y="29"
         textAnchor="middle"
         fill="white"
-        fontSize="10.5"
+        fontSize="14"
         fontWeight="800"
-        fontFamily="ui-sans-serif, system-ui, -apple-system, Inter, sans-serif"
+        fontFamily="Poppins, Inter, ui-sans-serif, system-ui, sans-serif"
         letterSpacing="-0.04em"
       >
         21+

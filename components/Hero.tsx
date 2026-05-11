@@ -3,13 +3,12 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import HeroStats from "./HeroStats";
 import ShopifyIcon from "./ui/icons/ShopifyIcon";
 import RevealText from "./ui/RevealText";
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-24 sm:pt-40 sm:pb-28 overflow-hidden">
+    <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 overflow-hidden">
       <HeroBackground />
 
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
@@ -18,9 +17,9 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E2E5EA] bg-white/70 backdrop-blur px-4 py-2 text-sm font-medium text-[#1C1C1C]"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-[#a29cd6] px-4 py-2 text-[16px] tracking-[-0.5px] text-[#1C1C1C]"
         >
-          <ShopifyIcon className="h-4 w-4" />
+          <ShopifyIcon className="h-[18px] w-[18px] shrink-0" />
           On Shopify since January 2017
         </motion.div>
 
@@ -116,8 +115,6 @@ export default function Hero() {
           (save 11%) · 7-day free trial
         </motion.p>
       </div>
-
-      <HeroStats />
     </section>
   );
 }
@@ -127,40 +124,72 @@ function HeroBackground() {
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
       <div className="absolute inset-0 bg-white" />
 
+      {/* Magenta/pink blob — top center */}
       <div
-        className="absolute inset-0"
+        className="absolute rounded-full"
         style={{
-          background: `
-            radial-gradient(ellipse 70% 60% at 30% 15%, rgba(220, 200, 250, 0.55), transparent 60%),
-            radial-gradient(ellipse 60% 55% at 75% 25%, rgba(250, 200, 230, 0.55), transparent 60%),
-            radial-gradient(ellipse 50% 40% at 90% 35%, rgba(255, 220, 200, 0.40), transparent 60%),
-            linear-gradient(to bottom, rgba(252, 240, 255, 0.6) 0%, rgba(255, 255, 255, 1) 80%)
-          `,
+          backgroundColor: "rgba(201, 65, 249, 0.35)",
+          filter: "blur(280px)",
+          width: "1080px",
+          height: "715px",
+          top: "-90px",
+          left: "50%",
+          transform: "translateX(-50%)",
         }}
       />
 
+      {/* Orange blob — bottom left */}
       <div
-        className="absolute inset-0 opacity-[0.6]"
+        className="absolute rounded-full"
+        style={{
+          backgroundColor: "rgba(255, 92, 0, 0.12)",
+          filter: "blur(280px)",
+          width: "920px",
+          height: "608px",
+          top: "360px",
+          left: "-190px",
+        }}
+      />
+
+      {/* Light lavender blob — right side */}
+      <div
+        className="absolute rounded-full"
+        style={{
+          backgroundColor: "rgba(237, 227, 245, 0.25)",
+          filter: "blur(350px)",
+          width: "920px",
+          height: "607px",
+          top: "270px",
+          right: "-190px",
+        }}
+      />
+
+      {/* Magenta blob — top right */}
+      <div
+        className="absolute rounded-full"
+        style={{
+          backgroundColor: "rgba(201, 65, 249, 0.25)",
+          filter: "blur(280px)",
+          width: "540px",
+          height: "357px",
+          top: "90px",
+          right: "-100px",
+        }}
+      />
+
+      {/* Blue grid — bottom half, radial mask */}
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 opacity-[0.08]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, rgba(28, 28, 28, 0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(28, 28, 28, 0.04) 1px, transparent 1px)",
-          backgroundSize: "44px 44px",
+            "linear-gradient(to right, #2A22FF 1px, transparent 1px), linear-gradient(to bottom, #2A22FF 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
           maskImage:
-            "linear-gradient(to bottom, black 0%, black 70%, transparent 100%)",
+            "radial-gradient(ellipse at 50% 100%, black 0%, transparent 70%)",
           WebkitMaskImage:
-            "linear-gradient(to bottom, black 0%, black 70%, transparent 100%)",
+            "radial-gradient(ellipse at 50% 100%, black 0%, transparent 70%)",
         }}
       />
-
-      <div
-        className="absolute top-0 right-0 h-full w-1/3"
-        style={{
-          background:
-            "radial-gradient(ellipse at right, rgba(255, 138, 60, 0.06), transparent 70%)",
-        }}
-      />
-
-      <div className="absolute inset-0 bg-noise opacity-[0.5]" />
     </div>
   );
 }

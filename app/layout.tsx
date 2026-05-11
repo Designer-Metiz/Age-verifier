@@ -1,7 +1,14 @@
 import type { Metadata } from "next";
-import CursorGlow from "@/components/providers/CursorGlow";
+import { Poppins } from "next/font/google";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import "./globals.css";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-poppins",
+});
 
 export const metadata: Metadata = {
   title: "AgeShield — Age Verification & Compliance Made Effortless",
@@ -31,22 +38,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
-        />
-      </head>
+    <html lang="en" className={poppins.variable}>
       <body className="bg-bg text-ink-900 font-sans selection:bg-accent-500/20 antialiased">
         <SmoothScroll>
-          <CursorGlow />
           {children}
         </SmoothScroll>
       </body>

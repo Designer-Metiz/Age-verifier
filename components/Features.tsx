@@ -20,7 +20,7 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="relative py-32 sm:py-40 bg-[#F9FAFB]"
+      className="relative py-20 sm:py-28 bg-[#F9FAFB]"
     >
       {/* faint grid */}
       <div className="pointer-events-none absolute inset-0 bg-grid opacity-[0.45] mask-radial-fade" />

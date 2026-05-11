@@ -39,7 +39,7 @@ const faqs = [
 export default function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="relative py-32 sm:py-40 bg-white overflow-hidden">
+    <section id="faq" className="relative py-20 sm:py-28 bg-white overflow-hidden">
       <div className="relative mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="FAQ"

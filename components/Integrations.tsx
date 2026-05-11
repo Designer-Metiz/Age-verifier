@@ -57,7 +57,7 @@ export default function Integrations() {
   return (
     <section
       id="integrations"
-      className="relative py-32 sm:py-40 bg-white overflow-hidden"
+      className="relative py-20 sm:py-28 bg-white overflow-hidden"
     >
       {/* faint orange/purple wash + dotted backdrop */}
       <div className="pointer-events-none absolute -top-40 right-1/4 h-[400px] w-[700px] rounded-full bg-[#FF5C00]/[0.06] blur-[120px]" />

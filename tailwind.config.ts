@@ -59,8 +59,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: [
+          "var(--font-poppins)",
           "Poppins",
-          "Inter",
           "ui-sans-serif",
           "system-ui",
           "-apple-system",
@@ -72,8 +72,8 @@ const config: Config = {
           "sans-serif",
         ],
         display: [
+          "var(--font-poppins)",
           "Poppins",
-          "Inter",
           "ui-sans-serif",
           "system-ui",
           "Segoe UI",
